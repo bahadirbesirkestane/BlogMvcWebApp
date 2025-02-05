@@ -28,6 +28,11 @@ namespace Blogsite.BusinessLayer.Concrete
             return _blogDAL.GetAll();
         }
 
+        public List<Blog> GetBlogById(int id)
+        {
+            return _blogDAL.GetAll(x=>x.BlogId == id);
+        }
+
         public List<Blog> GetBlogListWithCategory()
         {
             return _blogDAL.GetListWithCategory();

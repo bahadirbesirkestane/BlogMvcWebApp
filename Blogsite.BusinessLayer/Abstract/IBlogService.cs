@@ -15,5 +15,6 @@ namespace Blogsite.BusinessLayer.Abstract
         List<Blog> GetAll();
         Blog GetById(int id);
         List<Blog> GetBlogListWithCategory();
+        List<Blog> GetBlogById(int id);
     }
 }
