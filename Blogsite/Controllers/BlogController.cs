@@ -13,5 +13,12 @@ namespace Blogsite.Controllers
 
             return View(values);
         }
+
+        public IActionResult BlogReadAll(int id)
+        {
+            ViewBag.BlogId = id;
+            var values =_blogManager.GetBlogById(id);
+            return View(values);
+        }
     }
 }
