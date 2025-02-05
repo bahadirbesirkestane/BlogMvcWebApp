@@ -177,3 +177,7 @@ C:\Users\O M E N\Masaüstü\BlogCoreApp\Blogsite\Blogsite\obj\Debug\net8.0\refin
 C:\Users\O M E N\Masaüstü\BlogCoreApp\Blogsite\Blogsite\obj\Debug\net8.0\Blogsite.pdb
 C:\Users\O M E N\Masaüstü\BlogCoreApp\Blogsite\Blogsite\obj\Debug\net8.0\Blogsite.genruntimeconfig.cache
 C:\Users\O M E N\Masaüstü\BlogCoreApp\Blogsite\Blogsite\obj\Debug\net8.0\ref\Blogsite.dll
+C:\Users\O M E N\Masaüstü\BlogCoreApp\Blogsite\Blogsite\bin\Debug\net8.0\FluentValidation.dll
+C:\Users\O M E N\Masaüstü\BlogCoreApp\Blogsite\Blogsite\bin\Debug\net8.0\FluentValidation.AspNetCore.dll
+C:\Users\O M E N\Masaüstü\BlogCoreApp\Blogsite\Blogsite\bin\Debug\net8.0\FluentValidation.DependencyInjectionExtensions.dll
+C:\Users\O M E N\Masaüstü\BlogCoreApp\Blogsite\Blogsite\obj\Debug\net8.0\Blogsite.MvcApplicationPartsAssemblyInfo.cs
