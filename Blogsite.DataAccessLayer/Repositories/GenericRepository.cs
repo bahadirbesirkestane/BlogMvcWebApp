@@ -3,6 +3,7 @@ using Blogsite.DataAccessLayer.Concrete;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -23,6 +24,13 @@ namespace Blogsite.DataAccessLayer.Repositories
             //var dene= _context.Set<T>().ToList();
 
             return _context.Set<T>().ToList();
+        }
+
+        public List<T> GetAll(Expression<Func<T, bool>> filter)
+        {
+            using var _context = new Context();
+
+            return _context.Set<T>().Where(filter).ToList();
         }
 
         public T GetById(int id)
