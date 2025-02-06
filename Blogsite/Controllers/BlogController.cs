@@ -17,7 +17,12 @@ namespace Blogsite.Controllers
         public IActionResult BlogReadAll(int id)
         {
             ViewBag.BlogId = id;
+            
             var values =_blogManager.GetBlogById(id);
+
+            var blog =values.Find(x => x.BlogId == id);
+            ViewBag.WriterId = blog.WriterId;
+
             return View(values);
         }
     }
