@@ -1,0 +1,78 @@
+﻿@{
+    Layout = "~/Views/Shared/UserLayout.cshtml";
+}
+
+@using Blogsite.EntityLayer.Concrete
+@model List<About>
+
+<section class="main-content-w3layouts-agileits">
+	<div class="container">
+		<h3 class="tittle">Hakkımızda</h3>
+		<div class="row inner-sec">
+			<!--left-->
+
+			@foreach (var item in Model)
+			{
+				<div class="col-lg-8 left-blog-info-w3layouts-agileits text-left">
+					<div class="blog-grid-top">
+
+						<div class="blog_info_left_grid">
+							<a href="single.html">
+								<img src="~/BlogTema/images/b5.jpg" class="img-fluid" alt="">
+							</a>
+						</div>
+						<h3>
+							Tutku, Bilgi ve Paylaşımın Buluştuğu Nokta
+						</h3>
+						<br />
+						<p>
+							@item.AboutDetails1
+						</p>
+						<h4>
+							Nasıl Başladık?
+						</h4>
+						<br />
+
+						<p>
+							@item.AboutDetails2
+						</p>
+						<a href="single.html" class="btn btn-primary read-m">Read More</a>
+					</div>
+
+				</div>
+			}
+
+			
+			<!--//left-->
+			<!--right-->
+			<aside class="col-lg-4 agileits-w3ls-right-blog-con text-right">
+				<div class="right-blog-info text-left">
+					<div class="tech-btm">
+						<img src="~/BlogTema/images/banner1.jpg" class="img-fluid" alt="">
+					</div>
+					@* @await Html.PartialAsync("~/Views/NewsLetter/SubscribeMail.cshtml") *@
+
+					@* SubscribeMail *@
+					<div class="tech-btm">
+						<h4>Mail Bültenine Abone Olun</h4>
+						<p>Kartallar yalnız uçar </p>
+						<form action="/NewsLetter/SubscribeMail" method="post">
+							<input type="email" placeholder="Email" required="" name="Mail">
+							<input type="submit" value="Abone Ol">
+						</form>
+
+					</div>
+					
+					
+
+					@await Html.PartialAsync("~/Views/About/SocialMediaPartial.cshtml")
+
+					@await Component.InvokeAsync("WriterLastBlogs")
+
+				</div>
+
+			</aside>
+			<!--//right-->
+		</div>
+	</div>
+</section>
