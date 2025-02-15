@@ -7,15 +7,13 @@ using System.Threading.Tasks;
 
 namespace Blogsite.BusinessLayer.Abstract
 {
-    public interface IBlogService
+    public interface IBlogService : IGenericService<Blog>
     {
-        void AddBlog(Blog blog);
-        void RemoveBlog(Blog blog);
-        void UpdateBlog(Blog blog);
-        List<Blog> GetAll();
-        Blog GetById(int id);
         List<Blog> GetBlogById(int id);
         List<Blog> GetBlogListWithCategory();
         List<Blog> GetBlogListWithWriter(int id);
+        List<Blog> GetLastThreeBlogs();
+        List<Blog> GetBlogListWithCategoryByWriter(int id);
+
     }
 }

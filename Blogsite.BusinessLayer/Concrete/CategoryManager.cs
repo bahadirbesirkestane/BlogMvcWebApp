@@ -17,29 +17,31 @@ namespace Blogsite.BusinessLayer.Concrete
         {
             _categoryDAL = categoryDAL;
         }
-        public void AddCategory(Category category)
+
+        public void AddT(Category t)
         {
-            _categoryDAL.Insert(category);
+            _categoryDAL.Insert(t);
         }
 
-        public List<Category> GetAll()
-        {
-            return _categoryDAL.GetAll();
-        }
-
-        public Category GetById(int id)
+        public Category TGetById(int id)
         {
             return _categoryDAL.GetById(id);
         }
 
-        public void RemoveCategory(Category category)
+        public List<Category> GetList()
         {
-            _categoryDAL.Delete(category);
+            return _categoryDAL.GetAll();
         }
 
-        public void UpdateCategory(Category category)
+        public void RemoveT(Category t)
         {
-            _categoryDAL.Update(category);
+            _categoryDAL.Delete(t);
         }
+
+        public void UpdateT(Category t)
+        {
+            _categoryDAL.Update(t);
+        }
+        
     }
 }

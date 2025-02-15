@@ -7,8 +7,12 @@ using System.Threading.Tasks;
 
 namespace Blogsite.BusinessLayer.Abstract
 {
-    public interface IAboutService : IGenericService<About>
+    public interface IGenericService<T>
     {
-
+        void AddT(T t);
+        void RemoveT(T t);
+        void UpdateT(T t);
+        List<T> GetList();
+        T TGetById(int id);
     }
 }

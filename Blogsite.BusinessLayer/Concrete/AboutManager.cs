@@ -17,9 +17,30 @@ namespace Blogsite.BusinessLayer.Concrete
         {
             _aboutDAL = aboutDAL;
         }
-        public List<About> GetAll()
+
+        public void AddT(About t)
+        {
+            throw new NotImplementedException();
+        }
+
+        public About TGetById(int id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public List<About> GetList()
         {
             return _aboutDAL.GetAll();
+        }
+
+        public void RemoveT(About t)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void UpdateT(About t)
+        {
+            throw new NotImplementedException();
         }
     }
 }
