@@ -2,15 +2,15 @@
 using Blogsite.DataAccessLayer.EntityFramework;
 using Microsoft.AspNetCore.Mvc;
 
-namespace Blogsite.ViewComponents.Category
+namespace Blogsite.ViewComponents.Blog
 {
-    public class CategoryList : ViewComponent
+    public class BlogLastThreePost : ViewComponent
     {
-        CategoryManager _categoryManager = new CategoryManager(new EfCategoryRepository());
+        BlogManager _blogManager = new BlogManager(new EfBlogRepository());
 
         public IViewComponentResult Invoke()
         {
-            var values = _categoryManager.GetList();
+            var values = _blogManager.GetLastThreeBlogs();
             return View(values);
         }
     }
