@@ -18,8 +18,8 @@
 					<div class="blog-grid-top">
 						<div class="b-grid-top">
 							<div class="blog_info_left_grid">
-								<a href="single.html">
-									<img src="~/BlogTema/images/b1.jpg" class="img-fluid" alt="">
+								<a href="#">
+									<img src="@item.BlogImage" class="img-fluid" alt="">
 								</a>
 							</div>
 							<div class="blog-info-middle">
@@ -45,7 +45,7 @@
 						</div>
 
 						<h3>
-							<a href="single.html">@item.BlogTitle </a>
+							<a href="#">@item.BlogTitle </a>
 						</h3>
 						<p>
 							@item.BlogContent
@@ -59,22 +59,8 @@
 				@* @await Html.PartialAsync("~/Views/Comment/CommentListByBlog.cshtml") *@
 
 
-				@* @await Html.PartialAsync("~/Views/Comment/PartialAddComment.cshtml")  *@
+				@await Html.PartialAsync("~/Views/Comment/PartialAddComment.cshtml", Model)
 
-
-				@* PartialAddComment *@
-				<div class="comment-top">
-					<h4>Yorum Ekle</h4>
-					<div class="comment-bottom">
-						<form asp-controller="Comment" asp-action="AddComment" asp-route-blogId="@Model[0].BlogId" method="post">
-							<input class="form-control" type="text" name="CommentUserName" placeholder="İsim Soyisim" required="">
-							<input class="form-control" type="text" name="CommentTitle" placeholder="Başlık" required="">
-
-							<textarea class="form-control" name="CommentContent" placeholder="Yorum bırakın..." required=""></textarea>
-							<button type="submit" class="btn btn-primary submit">Gönder</button>
-						</form>
-					</div>
-				</div>
 				
 			</div>
 
@@ -86,18 +72,9 @@
 						<img src="~/BlogTema/images/banner1.jpg" class="img-fluid" alt="">
 					</div>
 
-					@* @await Html.PartialAsync("~/Views/NewsLetter/SubscribeMail.cshtml") *@
+					<h4>Mail Bültenine Abone Olun</h4>
 
-					<div class="tech-btm">
-						<h4>Mail Bültenine Abone Olun</h4>
-						<p>Kartallar yalnız uçar </p>
-						<form action="/NewsLetter/SubscribeMail" method="post">
-							<input type="email" placeholder="Email" required="" name="Mail">
-							<input type="submit" value="Abone Ol">
-						</form>
-
-					</div>
-
+					@await Html.PartialAsync("~/Views/NewsLetter/SubscribeMail.cshtml")
 
 					@await Component.InvokeAsync("CategoryList")
 

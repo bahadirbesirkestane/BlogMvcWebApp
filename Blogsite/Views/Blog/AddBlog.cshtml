@@ -1,0 +1,42 @@
+﻿@{
+    Layout = "~/Views/Shared/WriterLayout.cshtml";
+}
+
+@model Blogsite.EntityLayer.Concrete.Blog
+
+<div class="col-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Yeni Blog Ekleme</h4>
+
+
+            @using (Html.BeginForm("AddBlog", "Blog", FormMethod.Post))
+            {
+                <div class="form-group">
+                    <label for="exampleInputName1">Başlık</label>
+
+                    @Html.TextBoxFor(x => x.BlogTitle, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(x => x.BlogTitle, "", new { @class = "text-danger" })
+                    
+                </div>
+                <div class="form-group">
+                    <label for="exampleTextarea1">İçerik</label>
+                    @Html.TextAreaFor(x => x.BlogContent,3,10, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(x => x.BlogContent, "", new { @class = "text-danger" })
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputName1">Image</label>
+                    @Html.TextBoxFor(x => x.BlogImage, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(x => x.BlogImage, "", new { @class = "text-danger" })
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputName1">Kategori Id</label>
+                    @Html.DropDownListFor(x => x.CategoryId, (List<SelectListItem>)ViewBag.CategoryValue, new { @class = "form-control" })
+                </div>
+                
+                <button class="btn btn-gradient-primary mr-2">Gönder</button>
+            }
+
+        </div>
+    </div>
+</div>
